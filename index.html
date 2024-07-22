@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <title>Trip Wear</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body class="rubik-font">
+    <header>
+        <!-- Barra de navegação Geral -->
+        <nav class="navbar main-navbar">
+            <div class="logo">
+                <a href="#" onclick="return show('home')"><img src="imagens/logo_name.png" alt="Logo."/></a>
+            </div>
+            <ul class="navlinks">
+                <li><a class="navbar-hover hover-animation" href="#home" onclick="show('home')">Home</a></li>
+                <li><a class="navbar-hover hover-animation" href="#products" onclick="show('products')">Produtos</a></li>
+                <li><a class="navbar-hover hover-animation" href="#about-us" onclick="show('about-us')">Sobre Nós</a></li>
+                <li><a class="navbar-hover hover-animation" href="#contact" onclick="show('contact')">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Página Home -->
+    <section id="home" class="page active">
+        <section id="homesec">
+            <!-- Carrossel de imagens (links promocionais) -->
+            <section class="carousel">
+                <input type="radio" name="carousel" id="slide1" checked>
+                <input type="radio" name="carousel" id="slide2">
+                <input type="radio" name="carousel" id="slide3">
+                <div class="slides">
+                    <div class="slide">
+                        <a href="#products" onclick="show('products');filterProducts('clothing');" ><img src="imagens/outono_inverno.png" alt="Coleção de Outono Inverno."></a>
+                    </div>
+                    <div class="slide">
+                        <a href="#products" onclick="show('products');filterProducts('accessories');" ><img src="imagens/acessorios.gif" alt="Acessorios."></a>
+                    </div>
+                    <div class="slide">
+                        <a href="#products" onclick="show('products');filterProducts('all');" ><img src="imagens/ultimas_pecas.png" alt="Ultimas Peças."></a>
+                    </div>
+                </div>
+                <div class="navslide">
+                    <label class="radio" for="slide1"></label>
+                    <label class="radio" for="slide2"></label>
+                    <label class="radio" for="slide3"></label>
+                </div>
+            </section>
+            <!-- Galeria de Imagens -->
+            <section class="galery">
+                <img class="hover-animation" src="imagens/city.png" alt="Mulher na Cidade.">
+                <img class="hover-animation" src="imagens/power.png" alt="Poder.">
+                <img class="hover-animation" src="imagens/beach.png" alt="Mulher na Praia.">
+                <img class="hover-animation" src="imagens/freedom.png" alt="Liberdade.">
+            </section>
+        </section>
+    </section>
+
+    <!-- Página de Produtos -->
+    <section id="products" class="page">
+        <!-- Barra de navegação de Categorias -->
+        <nav class="navbar-produtos navbar">
+            <ul class="navlinks navlinks-produtos ">
+                <li><a class="navbar-hover hover-animation" href="#" onclick="return filterProducts('all')">Todos</a></li>
+                <li><a class="navbar-hover hover-animation" href="#" onclick="return filterProducts('clothing')">Roupas</a></li>
+                <li><a class="navbar-hover hover-animation" href="#" onclick="return filterProducts('accessories')">Acessórios</a></li>
+                <li><a class="navbar-hover hover-animation" href="#" onclick="return filterProducts('shoes')">Sapatos</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Imagem de Promoção -->
+        <img src="imagens/outono_inverno.png" alt="Coleções outono inverno.">
+        
+        <!-- Vizualização de cards dos Produtos -->
+        <section id="view-produtos">
+            <!-- Produto Casagrande: Pode ser visto em detalhes (demonstração da página do produto) -->
+            <article class="all clothing produto">
+                <img src="imagens/casagrande.jpg" alt="Jaqueta de couro ecológico.">
+                <h2 class="nome">CASAGRANDE JACKET</h2>
+                <h3 class="descrip">Jaqueta de couro</h3>
+                <p class="preco">R$ 320.00</p>
+                <button class="btn-vermais hover-animation" onclick="return show('casagrande')">Ver detalhes</button>
+            </article>
+            <!-- Outros Produtos: Apenas para preenchimento desta página (Não funcionais) -->
+            <article class="all clothing produto">
+                <img src="imagens/camisa.jpg" alt="Camisa social.">
+                <h2 class="nome">TAYLOR SHIRT</h2>
+                <h3 class="descrip">Camisa listrada azul</h3>
+                <p class="preco">R$ 105.99</p>
+                <button class="btn-vermais hover-animation">Ver detalhes</button>
+            </article>
+            <article class="all accessories produto">
+                <img src="imagens/oculos.jpg" alt="Óculos de sol.">
+                <h2 class="nome">CLOWN GLASSES</h2>
+                <h3 class="descrip">Óculos de sol</h3>
+                <p class="preco">R$ 150.00</p>
+                <button class="btn-vermais hover-animation">Ver detalhes</button>
+            </article>
+            <article class="all shoes produto">
+                <img src="imagens/sapatos.jpg" alt="Bota cano alto.">
+                <h2 class="nome">ANDERS BOOTS</h2>
+                <h3 class="descrip">Bota cano alto</h3>
+                <p class="preco">R$ 450.00</p>
+                <button class="btn-vermais hover-animation">Ver detalhes</button>
+            </article>
+            <article class="all clothing produto">
+                <img src="imagens/casaco.jpg" alt="Sobretudo verde.">
+                <h2 class="nome">PAUL OVERALL</h2>
+                <h3 class="descrip">Sobretudo verde</h3>
+                <p class="preco">R$ 210.00</p>
+                <button class="btn-vermais hover-animation">Ver detalhes</button>
+            </article>
+            <article class="all clothing produto">
+                <img src="imagens/cropped.jpg" alt="Cropped com estampa.">
+                <h2 class="nome">MICHAEL CROPPED</h2>
+                <h3 class="descrip">Camiseta gráfica</h3>
+                <p class="preco">R$ 80.00</p>
+                <button class="btn-vermais hover-animation">Ver detalhes</button>
+            </article>
+            <article class="all clothing produto">
+                <img src="imagens/calca.jpg" alt="Calça Jeans.">
+                <h2 class="nome">JIM PANTS</h2>
+                <h3 class="descrip">Calça Jeans</h3>
+                <p class="preco">R$ 120.00</p>
+                <button class="btn-vermais hover-animation">Ver detalhes</button>
+            </article>
+            <article class="all accessories produto">
+                <img src="imagens/oculos_amarelo.jpg" alt="óculos de sol amarelo.">
+                <h2 class="nome">SID GLASSES</h2>
+                <h3 class="descrip">Óculos de sol</h3>
+                <p class="preco">R$ 120.00</p>
+                <button class="btn-vermais hover-animation">Ver detalhes</button>
+            </article>
+            <article class="all accessories produto">
+                <img src="imagens/colar_set.jpg" alt="Kit com 3 colares.">
+                <h2 class="nome">KIT ALESSANDRO</h2>
+                <h3 class="descrip">Kit com 3 colares</h3>
+                <p class="preco">R$ 120.00</p>
+                <button class="btn-vermais hover-animation">Ver detalhes</button>
+            </article>
+            <article class="all accessories produto">
+                <img src="imagens/bolsa_couro.jpg" alt="Bolsa de couro.">
+                <h2 class="nome">SHAWN BAG</h3>
+                <h3 class="descrip">Bolsa em couro</h3>
+                <p class="preco">R$ 120.00</p>
+                <button class="btn-vermais hover-animation">Ver detalhes</button>
+            </article>
+            <article class="all shoes produto">
+                <img src="imagens/bota.jpg" alt="Bota preta.">
+                <h2 class="nome">COREY BOOTS</h2>
+                <h3 class="descrip">Botas com salto</h3>
+                <p class="preco">R$ 120.00</p>
+                <button class="btn-vermais hover-animation">Ver detalhes</button>
+            </article>
+            <article class="all shoes produto">
+                <img src="imagens/boneca.jpg" alt="Salto alto estilo boneca.">
+                <h2 class="nome">MICK HEELS</h2>
+                <h3 class="descrip">Salto modelo boneca</h3>
+                <p class="preco">R$ 120.00</p>
+                <button class="btn-vermais hover-animation">Ver detalhes</button>
+            </article>
+            <article class="all shoes produto">
+                <img src="imagens/tenis.jpg" alt="Tênis adidas.">
+                <h2 class="nome">ADIDAS SUPERSTAR</h2>
+                <h3 class="descrip">Tênis Adidas</h3>
+                <p class="preco">R$ 120.00</p>
+                <button class="btn-vermais hover-animation">Ver detalhes</button>
+            </article>
+            <article class="all shoes produto">
+                <img src="imagens/salto.jpg" alt="Sapatos de couro">
+                <h2 class="nome">ELOY HEELS</h2>
+                <h3 class="descrip">Salto plataforma</h3>
+                <p class="preco">R$ 120.00</p>
+                <button class="btn-vermais hover-animation">Ver detalhes</button>
+            </article>
+        </section>
+    </section>
+
+    <!-- Vizualização de Detalhes do Produto Casagrande (Demonstração somente com este produto) -->
+    <section id ="casagrande" class="product-page page">
+        <!-- Botão de retorno para página de produtos -->
+        <a class="voltar hover-animation" href="#" onclick="return show('products')"> < Voltar</a>
+
+        <!-- Vizualização do produto em si -->
+        <section class="view-casagrande">
+            <!-- Imagem do produto -->
+            <img class="casagrande" src="imagens/casagrande.jpg" alt="Casagrande Jacket.">
+            <!-- Detalhes do produto -->
+            <aside>
+                <!-- Nome do produto -->
+                <br>
+                <h1>CASAGRANDE JACKET</h1>
+                <h3>R$320.00</h3>
+                <br>
+                <!-- Seletores de tamanho -->
+                <p id="size-pp" class="size-btn hover-animation" onclick="return chosenSize('size-pp')">PP</p>
+                <p id="size-p" class="size-btn hover-animation" onclick="return chosenSize('size-p')">P</p>
+                <p id="size-m" class="size-btn hover-animation" onclick="return chosenSize('size-m')">M</p>
+                <p id="size-g" class="size-btn hover-animation" onclick="return chosenSize('size-g')">G</p>
+                <p id="size-gg" class="size-btn hover-animation" onclick="return chosenSize('size-gg')">GG</p>
+                <p id="size-xg" class="size-btn hover-animation" onclick="return chosenSize('size-xg')">XG</p>
+                <div id="div-options"></div>
+                <!-- Seletores de cor -->
+                <p id="brown" class="color-btn hover-animation" onclick="return chosenColor('brown')">MARROM</p>
+                <p id="black" class="color-btn hover-animation" onclick="return chosenColor('black')">PRETO</p>
+                <br>
+                <!-- Seletor de Quantidade -->
+                <br>
+                <h3 class="quant">Quantidade</h3>
+                <input class="quant" type="number" min="1" max="10" value="1">
+                <br>
+                <!-- Botão para realização da compra (simulação) -->
+                <br>
+                <button class="add-carrinho btn-hover hover-animation" onclick="return show('comprar')">COMPRAR</button>
+                <br>
+                <!-- Detalhes sobre tamanho e alertas -->
+                <h4 class="rubik-font">DESCRIÇÃO DA PEÇA</h4>
+                <p class="description">
+                    <br>TRIP WEAR | JAQUETA MODELO CASAGRANDE
+                    <br>
+                    Jaqueta de couro ecológico.Forro 100% algodão, Fechamento na gola por zíper, Detalhes na cor prata.
+                    <br>
+                    <br>P: Comprimento: 43cm/ Manga: 58cm/ Barra: 43cm/ Cava: 28cm.
+                    <br>P: Comprimento: 45cm/ Manga: 60cm/ Barra: 45cm/ Cava: 29cm.
+                    <br>M: Comprimento: 48cm/ Manga: 62cm/ Barra: 48cm/ Cava: 30cm.
+                    <br>G: Comprimento: 51cm/ Manga: 65cm/ Barra: 51cm/ Cava: 31cm.
+                    <br>GG: Comprimento: 54cm/ Manga: 68cm/ Barra: 54cm/ Cava: 32cm.
+                    <br>XG: Comprimento: 57cm/ Manga: 71cm/ Barra: 57cm/ Cava: 33cm.
+                    <br>*MEDIDAS APROXIMADAS. Variação de até 3%.
+                    <br>
+                    <br>Composição: 100% Couro Ecológico.
+                    <br>
+                    <br>*Este anúncio se refere somente à jaqueta. Os demais itens contidos na imagem, são vendidos separadamente.
+                    <br>Todas as peças da Trip Wear são criadas e produzidas no Brasil.</p>
+            </aside>
+        </section>
+
+        <!-- Comentário sobre as peças (demonstrativo) -->
+        <section class="comments">
+            <!-- Classificação -->
+            <h2>AVALIAÇÕES DO PRODUTO ★★★★★</h2>
+            <p>Classificação média: 0 (0 avaliações)</p>
+            <!-- Filtros -->
+            <select class="comments-filter">
+                <option selected>Mais recentes</option>
+                <option>Mais antigas</option>
+                <option>Classificação mais alta</option>
+                <option>Classificação mais baixa</option>
+            </select>
+            <select class="comments-filter">
+                <option selected>Todos</option>
+                <option>1 Estrela</option>
+                <option>2 Estrela</option>
+                <option>3 Estrela</option>
+                <option>4 Estrela</option>
+                <option>5 Estrela</option>
+            </select>
+            <!-- Avaliações -->
+            <article class="centralizado">
+                <!-- demonstrativo -->
+                <h2>NENHUMA AVALIAÇÃO</h2>
+                <p>Seja o primeiro a avaliar este produto.</p>
+                <br>
+                <!-- Botão para login (não funcional) -->
+                <button class="login btn-hover hover-animation">FAÇA LOGIN PARA AVALIAR</button>
+                <br>
+            </article>
+        </section>
+        <br><br>
+    </section>
+
+    <!-- Página de compra (simulação) -->
+    <section id="comprar" class="page">
+        <!-- Título da página -->
+        <h1 class="titulo-sessao">FINALIZAR COMPRA</h1>
+        <!-- Formulário de Entrega/Endereço -->
+        <form id="finalizar-compra" action="">
+            <!-- Dados Pessoais -->
+            <div class="personal-data">
+                <h2 class="titulo-texto">Dados Pessoais</h2>
+                <label class="label l1" for="nome">Nome:</label>
+                <input class="input-txt l1" type="text" name="nome" required>
+                <label class="label l1" for="cpf">CPF:</label>
+                <input class="l1" type="text" name="cpf" required>            
+                <label class="label l1" for="data-nasc">Data de Nasc.:</label>
+                <input type="date l1" name="data-nasc" required>
+                <label class="label" for="enderec">Endereço:</label>
+                <input class="input" type="text" name="enderec" required>
+                <label class="label" for="cep">CEP:</label>
+                <input type="text" name="cep" required>
+                <label class="label" for="cidade">Cidade:</label>
+                <input type="text" name="cidade" required>
+                <label class="label" for="estado">Estado:</label>
+                <input type="text" name="estado" required>
+            </div>
+            <!-- Confirmação de Itens e Forma de Entrega -->
+            <div class="purchase-details">
+                <h2 class="titulo-texto">Dados da Compra</h2>
+                <div class="purchase-details-box">
+                    <!-- Card do Produto sendo comprado -->
+                    <div class="card-produto">
+                        <img src="imagens/casagrande.jpg" alt="Jaqueta Casagrande.">
+                        <div class="conteudo">
+                            <h4>CASAGRANDE JACKET</h4>
+                            <p>Jaqueta de couro</p>
+                            <p>R$320,00</p>
+                            <p>Cor: Marrom</p>
+                            <p>Tamanho: M</p>
+                            <p>Quantidade: 1</p>
+                        </div>
+                    </div>
+                    <!-- Seleção de tipo de entrega -->
+                    <div class="tipo-entrega">
+                        <h3>Tipo de Entrega</h3>
+                        <div class="conteudo">
+                            <input type="radio" name="padrao" checked>
+                            <label class="label" for="padrao">Padrão</label>
+                        </div>
+                        <div class="conteudo">
+                            <input type="radio" name="padrao">
+                            <label class="label" for="padrao">Rápida  (+R$5,99)</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Finalização de Compra -->
+            <div class="finalize-purchase">
+                <h2 class="titulo-texto">Finalizar Compra</h2>
+                <div class="spacearound">
+                    <!-- Previsão de entrega e Valor final -->
+                    <p>Entrega pevista para 30/08/2024</p>
+                    <p class="valor">Valor total: R$ 320,00</p>
+                </div>
+                <!-- Botão de Finalização de Compra (Demonstrativo - Redireciona para Página Home) -->
+                <a href="#home" class="btn-hover hover-animation"><input type="submit" value="FINALIZAR" onclick="return show('home');"></a>
+            </div>
+        </form>    
+        <br>
+    </section>
+
+    <!-- Página Sobre Nós -->
+    <section id="about-us" class="page">
+        <div id="about-us-grid">
+            <!-- Título da página -->
+            <h1 class="titulo-sessao">Sobre Nós</h1>
+            <!-- História -->
+            <img id="imagem1" class="imagem" src="imagens/historia.jpg" alt="Ateliê.">
+            <article id="historia" class="texto">
+                <h2 class="titulo-texto">NOSSA HISTÓRIA</h2>
+                <p>
+                    Em meio ao caos e incertezas que marcaram o ano de 2020, uma pequena faísca de esperança acendeu-se em Uberlândia. 
+                    No auge da pandemia, quando o mundo parecia ter virado de cabeça para baixo, nasceu a Trip Wear, uma loja de roupas 
+                    com uma missão muito especial: transformar a maneira como as pessoas se vestem e se sentem, inspirando confiança e promovendo uma mudança positiva no mundo. <br>
+                    A fundação da Trip Wear foi um ato de coragem e visão. Seus fundadores, apaixonados por moda, viagens e pelo bem-estar das pessoas, 
+                    perceberam que a pandemia não era apenas um desafio, mas também uma oportunidade para repensar e renovar. Eles queriam criar 
+                    uma marca que fosse mais do que apenas roupas; uma marca que refletisse a resiliência e a capacidade humana de superar adversidades e dominar o mundo.
+                </p>
+            </article>
+            <!-- Missão -->
+            <img id="imagem2" class="imagem" src="imagens/missao.jpg" alt="Felicidade em Lockdown.">
+            <article id="missao" class="texto">
+                <br>
+                <h2 class="titulo-texto">UMA MISSÃO DE MUDANÇA</h2>
+                <p>
+                    Desde o início, a Trip Wear estabeleceu um compromisso claro: inspirar as pessoas a viverem sem medo e com confiança, 
+                    mesmo em tempos incertos. Cada peça de roupa foi cuidadosamente desenhada para não apenas vestir, mas empoderar e te acompanhar onde quer que vá. Com 
+                    designs modernos, confortáveis e de alta qualidade, a Trip Wear queria que seus clientes sentissem a força e a segurança 
+                    necessárias para enfrentar qualquer desafio. <br>
+                    Aliás, não somos apenas uma loja de roupas; somos uma comunidade. Durante os momentos mais difíceis da pandemia, a empresa 
+                    organizou campanhas para ajudar aqueles que mais precisavam, distribuindo máscaras, doando parte dos lucros para causas sociais 
+                    e promovendo mensagens de esperança e positividade por meio de suas redes sociais. Essas ações solidificaram a Trip Wear como uma 
+                    marca que se importa verdadeiramente com as pessoas e com o mundo ao seu redor.
+                </p>
+            </article>
+            <!-- Valores -->
+            <img id="imagem3" class="imagem" src="imagens/valores.jpg" alt="Sustentabilidade.">
+            <article id="valores" class="texto">
+                <br>
+                <h2 class="titulo-texto">NOSSOS VALORES</h2>
+                <p>Somos guiados por 3 valores principais: </p>
+                <ul>
+                    <li><b>Inovação e sustentabilidade:</b> Compromisso com práticas ecológicas para um futuro mais verde e saudável.</li>
+                    <li><b>Inspirar confiança:</b> Roupas que empoderam você a se sentir seguro e confiante em qualquer situação.</li>
+                    <li><b>Te acompanhar onde quer que vá:</b> Estilo e conforto para todas as suas aventuras, onde quer que esteja.</li>
+                </ul>
+            </article>
+        </div>
+    </section>
+
+    <!-- Página de Contato -->
+    <section id="contact" class="page">
+        <!-- Título da Página -->
+        <h1 class="titulo-sessao">Contato</h1>
+        <!-- Informações de contato -->
+        <p class="texto">Endereço: Rua Fulano da Silva - 1020, Santa Mônica - Uberlândia. CEP: 12.123-012</p>
+        <p class="texto">Telefone (64)11111-1111</p>
+        <!-- Links para Redes Sociais -->
+        <a href="https://www.facebook.com/" target="_blank"><img class="link-img" src="imagens/facebook.png" alt="Facebook."></a>
+        <a href="https://www.linkedin.com/" target="_blank"><img class="link-img" src="imagens/linkedin.png" alt="Linkedin."></a>
+        <a href="https://www.instagram.com/" target="_blank"><img class="link-img" src="imagens/instagram.png" alt="Instagram."></a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Informações Gerais Fixas -->
+        <section id="footer-infos">
+            <!-- Imagem decorativa -->
+            <img id="footer2" src="imagens/footer-1.png" alt="Bolinhas.">
+            <!-- Dúvidas -->
+            <article id="footer-duvidas">
+                <h3>DÚVIDAS FREQUENTES</h3>
+                <a href="">Nossas lojas</a>
+                <a href="">Entrega e fretes</a>
+                <a href="">Formas de pagamento</a>
+                <a href="">Trocas e devoluções</a>
+            </article>
+            <!-- Contato -->
+            <article id="footer-contato">
+                <h3>FALE CONOSCO</h3>
+                <!-- SAC -->
+                <p>SAC: (Whatsapp) (64)11111-1111</p>
+                <!-- Horário de funcionamento -->
+                <p>Horários de atendimento:</p>
+                <p>Seg a Sex. das 09 às 18h</p>
+                <br>
+                <!-- Links para Redes Sociais -->
+                <a href="https://www.facebook.com/" target="_blank"><img class="link-img" src="imagens/facebook.png" alt="Facebook."></a>
+                <a href="https://www.linkedin.com/" target="_blank"><img class="link-img" src="imagens/linkedin.png" alt="Linkedin."></a>
+                <a href="https://www.instagram.com/" target="_blank"><img class="link-img" src="imagens/instagram.png" alt="Instagram."></a>
+            </article>
+            <!-- Imagem decorativa -->
+            <img id="footer1" src="imagens/footer-2.png" alt="Ondas.">
+        </section>
+        <!-- Imagem sobre entrega e fretes -->
+        <img src="imagens/infos.png" alt="Informações sobre entrega.">
+        <!-- Direitos -->
+        <span class="direitos">© Trip Wear - Todos os direitos reservados - Trip Wear Clothing Indústria e Comércio de Vestuários Ltda. CNPJ 00.000.000/0001-02 SAC (64)1111-1111</span>
+    </footer>
+</body>
+</html>

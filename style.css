@@ -1,0 +1,838 @@
+/* Fontes externas */
+.rubik-font {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: bold;
+}
+
+/* Estrutura base */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #B1C0D3;
+}
+
+.titulo-sessao{
+  font-family: fantasy;
+  font-weight: normal;
+  font-size: 50px;
+  text-align: center;
+  color: #3a506b;
+}
+
+.titulo-texto{
+  padding: 2%;
+  color: #3a506b;
+}
+
+.texto{
+  color: #3a506b;
+  text-align: left;
+  font-size: 18px;
+  padding: 1%;
+}
+
+a {
+  text-decoration: none;
+  color: #54739C;
+  font-weight: bold;
+}
+
+.link-img{
+  width: 8%;
+  object-fit: contain;
+  padding: 1%;
+}
+
+/* animations and hovers */
+
+.hover-animation{
+  transition: background-color 0.5s, font-size 0.5s, width 0.5s, opacity 0.5s;
+}
+
+.btn-hover:hover {
+  font-size: 120%;
+}
+
+/* =========================================== Navegação entre páginas ================================== */
+
+/* Suporte da troca de página */
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+} 
+
+/* Navegação - Padrão */
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navlinks {
+  list-style: none;
+  display: flex;
+}
+
+.navlinks li {
+  margin-left: 2rem;
+}
+
+.navlinks a {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+/* Hover */
+.navbar-hover:hover {
+  background-color: #54739C;
+  color: white;
+  font-size: larger;
+}
+
+/* Navegação - Menu principal */
+
+.main-navbar {
+  background-color: white;
+}
+
+.logo img {
+  max-width: 150px;
+}
+
+/* Navegação - Categoria de produtos */
+
+.navbar-produtos {
+  background-color: #B1C0D3;
+}
+
+.navlinks-produtos a{
+  color: white;
+}
+
+/* =========================================== Páginas do site ===========================================*/
+
+/* Tela Home ********************************************* */
+
+#homesec {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  min-height: 100%;
+}
+
+/* Tela Home - Carrossel */
+
+.carousel {
+  width: 100%;
+  position: relative;
+}
+
+.carousel input {
+  display: none;
+}
+
+.slides {
+  display: flex;
+  overflow: hidden;
+}
+
+.slide {
+  min-width: 100%;
+  display: none;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
+/* Tela Home - Navegação do Carrossel */
+
+.navslide {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.navslide label {
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+#slide1:checked ~ .slides .slide:nth-child(1),
+#slide2:checked ~ .slides .slide:nth-child(2),
+#slide3:checked ~ .slides .slide:nth-child(3) {
+  display: block;
+}
+
+#slide1:checked ~ .navslide .radio:nth-child(1),
+#slide2:checked ~ .navslide .radio:nth-child(2),
+#slide3:checked ~ .navslide .radio:nth-child(3) {
+  background-color: #3a506b;
+}
+
+/* Tela Home - Galeria */
+
+.galery {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.galery img {
+  width: 22%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Hover */
+.galery img:hover {
+  width: 23%;
+}
+
+
+/* Tela Produtos ************************************************************ */
+
+#products img{
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+/* Tela Produtos - Disposição de Cards */
+
+#view-produtos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: left;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+/* Tela Produtos - Card */
+
+.produto {
+  border: 4px solid white;
+  border-radius: 4px;
+  background-color: white;
+  width: 228px;
+  height: 400px;
+  font-weight: normal;
+  text-align: left;
+  color: #54739C;
+}
+
+.produto img {
+  width: 100%;
+  height: auto;
+}
+
+.btn-vermais {
+  display: block;
+  position: relative;
+  width: 100%;
+  bottom: 40%;
+  background-color: #54739C;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  opacity: 0;
+}
+
+.produto .nome{
+  font-family: fantasy;
+  color: #3a506b;
+  font-weight: normal;
+}
+
+.produto .preco, .descrip {
+  font-family: Verdana, sans-serif;
+  font-weight: normal;
+}
+
+/* Hover */
+.btn-vermais:hover {
+  background-color: #3a506b;
+}
+
+.produto:hover .btn-vermais {
+  opacity: 1;
+}
+
+/* Tela Produto Casagrande (Demonstração) ************************************** */
+
+/* Voltar */
+.voltar {
+  text-decoration: none;
+  display: block;
+  color: #54739C;
+  font-weight: bold;
+  padding: 1% 3%;
+} 
+
+/* Hover */
+.voltar:hover{
+  font-size: 25px;
+}
+
+/* Tela Produto Casagrande - Vizualização do produto */
+
+.view-casagrande {
+  display: flex;
+  width: 100%;
+  background-color: white;
+  border-bottom: 40px solid #B1C0D3;
+}
+
+.casagrande {
+  padding: 10px;
+  border-radius: 20px;
+  display: inline;
+}
+
+.product-page aside{
+  display: inline;
+  padding: 0% 10px;
+}
+
+.product-page h1{
+  font-family: fantasy;
+  font-weight: normal;
+  font-size: 100px;
+}
+
+.product-page h3{
+  font-size: 30px;
+  color: #3a506b;
+}
+
+.product-page .size-btn, .color-btn{
+  display: inline;
+  font-size: 30px;
+  color: gray;
+  padding: 5px 5px;
+  border-radius: 5px;
+}
+
+.color-btn {
+  font-size: 30px;
+}
+
+/* Hover */
+.size-btn:hover{
+  font-size: 50px;
+  background-color: #54739C;
+  color: white;
+}
+
+/* Hover */
+.color-btn:hover{
+  font-size: 45px;
+  background-color: #54739C;
+  color: white;
+}
+
+/* Mudança de cor do item selecionado */
+.size-btn.chosen, .color-btn.chosen {
+  color: white;
+  background-color: #3a506b;
+}
+
+#div-options {
+  display: inline;
+  vertical-align: 5px;
+  background-color: #3a506b;
+  padding-right: 3px;
+}
+
+.quant{
+  display: inline;
+  font-size: 30px;
+  color: #3a506b;
+  text-align: center;
+}
+
+.add-carrinho {
+  display: block;
+  border: none;
+  padding: 3% 30%;
+  font-size: 100%;
+  font-weight: bold;
+  background-color: #3a506b;
+  color: white;
+  border-radius: 5px;
+}
+
+.product-page h4{
+  font-family: fantasy;
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+.description{
+  font-size: 11px;
+  color: #54739C;
+}
+
+/* Tela Produto Casagrande - Comentários */
+
+.comments {
+  position: relative;;
+  width: 95%;
+  left: 2.5%;
+  right: 2.5%;
+  border: 3px solid #3a506b;
+  background-color: white;
+  color: #3a506b;
+}
+
+.comments h2{
+  padding: 1%;
+}
+
+.comments p{
+  display: inline;
+  padding: 0.5%;
+}
+
+.comments-filter{
+  color: #3a506b;
+  position: relative;
+  left: 50%;
+  padding: 0.5%;
+  border: 1px solid #3a506b;
+}
+
+.comments-filter option{
+  padding: 3px;
+  color: #3a506b;
+}
+
+.centralizado {
+  padding: 0;
+  text-align: center;
+}
+
+.login {
+  display: block;
+  position: relative;
+  left: 2%;
+  border: none;
+  padding: 1% 3%;
+  font-size: 100%;
+  font-weight: bold;
+  background-color: #3a506b;
+  color: white;
+  border-radius: 5px;
+}
+
+
+/* Tela Comprar ******************************************************** */
+
+
+#comprar{
+  height: 100%;
+}
+
+#finalizar-compra{
+  display: grid;
+  grid-template-rows: 24% 44% 32%;
+  grid-template-areas: 
+    "dados-pessoais"
+    "dados-compra"
+    "finalizacao";
+  padding: 15px;
+  background-color: white;
+  font-weight: bold;
+}
+
+.input-txt{
+  width: 50%;
+}
+
+.label, input  {
+  color: #3a506b;
+  font-size: 15px;
+}
+
+/* Tela Comprar - Dados pessoais */
+
+.personal-data{
+  grid-area: dados-pessoais;
+}
+
+/* Tela Comprar - Dados da compra */
+
+.purchase-details {
+  grid-area: dados-compra;
+}
+
+.purchase-details-box{
+  display: flex;
+  object-fit: contain;
+  justify-content: space-around;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+/* Card do produto */
+
+.card-produto {
+  display: flex;
+  height: 140px;
+  border: 2px solid #3a506b;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.card-produto img{
+  display: inline;
+  max-height: 100%;
+  padding-right: 10px;
+}
+
+.card-produto .conteudo {
+  display: inline;
+  padding: 1%;
+  max-height: 80%;
+}
+
+.conteudo h4{
+  display: block;
+  font-size: 20px;
+  color: #3a506b;
+}
+
+.conteudo p{
+  font-size: 15px;
+  color: #3a506b;
+}
+
+/* Tipo de Entrega */
+.tipo-entrega{
+  display: inline;
+}
+
+.tipo-entrega .conteudo{
+  width: fit-content;
+}
+
+/* Finalização de compra */
+
+#finalizar-compra h3{
+  display: block;
+  width: fit-content;
+  font-size: 15px;
+  color: #3a506b;
+}
+
+.finalize-purchase{
+  grid-area: finalizacao;
+  display: inline;
+  justify-content: space-around;
+}
+
+.spacearound {
+  display: flex;
+  justify-content: space-between;
+  padding: 1%;
+}
+
+.finalize-purchase p{
+  display: inline;
+  font-size: 15px;
+  color: #3a506b;
+}
+
+.finalize-purchase .valor{
+  font-size: 20px;
+  color:darkorange;
+}
+
+.finalize-purchase input{
+  display: block;
+  border: none;
+  float: right;
+  padding: 1% 10%;
+  font-size: 100%;
+  font-weight: bold;
+  background-color: #3a506b;
+  color: white;
+  border-radius: 5px;
+}
+
+/* Tela Sobre Nós ********************************************************* */
+
+#about-us-grid{
+  background-color: white;
+  display: grid;
+  grid-template-rows: 10% 30% 30% 30%;
+  grid-template-columns: 15% 70% 15%;
+  grid-template-areas: 
+  "titulo titulo titulo"
+  "imagem1 historia historia"
+  "missao missao imagem2"
+  "imagem3 valores valores";
+  padding: 2%;
+}
+
+#about-us h1{
+  grid-area: titulo;
+}
+
+.imagem{
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Sobre nós - Historia */
+
+#historia{
+  grid-area: historia;
+}
+
+#imagem1{
+  grid-area: imagem1;
+  
+}
+
+/* Sobre nós - Missão */
+
+#missao{
+  grid-area: missao;
+}
+
+#imagem2{
+  grid-area: imagem2;
+}
+
+/* Sobre nós - Valores */
+
+#valores{
+  grid-area: valores;
+  padding-bottom: 5%;
+}
+
+#valores ul{
+  padding: 1%;
+  font-size: 20px;
+  color: #3a506b;
+}
+
+#valores li{
+  list-style: none;
+  padding: 0.5%;
+}
+
+#imagem3{
+  grid-area: imagem3;
+}
+
+/* Tela Contato ********************************************************* */
+
+#contact{
+  background-color: white;
+  text-align: center;
+}
+
+#contact h1{
+  padding: 2%;
+}
+
+#contact p{
+  padding: 0.5%;
+  text-align: center;
+}
+
+#contact a{
+  background-color: white;
+}
+
+/* =================================================== Footer ========================================== */
+
+/* Informações Gerais Fixas ****************************** */
+#footer-infos{
+  display: grid;
+  grid-template-columns: 10% 40% 40% 10%;
+  grid-template-areas: "img1 duvidas contato img2";
+  background-color: #3a506b;
+  color: #B1C0D3;
+  font-size: 15px;
+  padding: 2% 0%;
+}
+
+#footer-infos a{
+  padding: 1%;
+  display: block;
+  text-decoration: none;
+  color: #B1C0D3;
+}
+
+#footer-infos a{
+  padding: 1%;
+}
+
+#footer-infos p{
+  padding: 1%;
+  color: #B1C0D3;
+}
+
+#footer-infos h3{
+  font-size: 20px;
+}
+
+/* Informações Gerais Fixas - Dúvidas */
+
+#footer-duvidas {
+  grid-area: duvidas;
+  padding-left: 20%;
+}
+
+/* Informações Gerais Fixas - Contato */
+#footer-contato{
+  grid-area: contato;
+}
+
+#footer-contato a{
+  display: inline;
+}
+
+#footer-contato img{
+  max-width: 20px;
+}
+
+/* Imagens decorativas */
+#footer1 {
+  grid-area: img1;
+}
+
+#footer2 {
+  grid-area: img2;
+  position: relative;
+  top: 20%;
+}
+
+/* Informações Entregas e frete  *********************************************** */
+footer img{
+  width: 100%;
+}
+
+/* Direitos ********************************************************************* */
+.direitos {
+  padding-left: 2%;
+  font-size: smaller;
+  color: #54739C;
+}
+
+/* =========================================== Responsividade ============================================*/
+
+@media (max-width: 768px) {
+    /* Ajustes gerais */
+    body {
+        padding: 1rem;
+    }
+    
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .navlinks {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navlinks li {
+        margin: 0.5rem 0;
+    }
+
+    .carousel .slide img {
+        height: auto;
+    }
+
+    .galery img {
+        width: 48%;
+        margin: 1%;
+    }
+
+    #view-produtos {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .produto {
+        width: 90%;
+        margin: 1rem 0;
+    }
+
+    .view-casagrande {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-page h1 {
+        font-size: 2rem;
+    }
+
+    .product-page h3 {
+        font-size: 1.5rem;
+    }
+
+    .product-page .size-btn {
+        font-size: 1rem;
+    }
+
+    .add-carrinho {
+        padding: 0.5rem 1rem;
+    }
+
+    .description {
+        font-size: 0.875rem;
+    }
+
+    .comments {
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navlinks {
+        align-items: flex-start;
+    }
+
+    .navlinks a {
+        width: 100%;
+        text-align: left;
+    }
+
+    .galery img {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}

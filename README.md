@@ -1,6 +1,8 @@
 
 ### Projeto Trip Wear - Observações
 
+##Link de acesso: https://ana-neuber.github.io/trip_wear/
+
 - O projeto da Página Trip Wear foi feito como parte do Processo Seletivo da Empresa Jr. ASCII, da Universidade Federal de Uberlândia. 
 - A atividade exigia a criação de um site de loja de roupas, criando desde as imagens e paleta de cores até o código completo de front-end da página.
 - Não foi exigido nenhum tipo de código back-end mas, apesar de não estar nos requisitos, acabei implementando algumas funcionalidades puramente de layout e estética.

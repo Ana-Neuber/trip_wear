@@ -33,7 +33,7 @@ body {
 .texto{
   color: #3a506b;
   text-align: left;
-  font-size: 18px;
+  font-size: 100%;
   padding: 1%;
 }
 
